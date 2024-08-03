@@ -39,7 +39,7 @@ const ProjectForm = () => {
       <label>Your name:</label>
       <input
         placeholder="...."
-        {...register("Owner", { required: true, pattern: /^[A-Za-z-]+$/gi })}
+        {...register("Owner", { required: true, pattern: /^[A-Za-z- ]+$/gi })}
       />
       {errors.Owner?.type === "required" && (
         <p role="alert">Your name is required</p>
