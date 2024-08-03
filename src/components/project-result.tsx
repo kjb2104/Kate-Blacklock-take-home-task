@@ -4,15 +4,16 @@ import { useLocation } from "react-router-dom";
 const ProjectResult = () => {
   const { state } = useLocation();
 
-  // basic rendering of the details acquired from the form
 
   return (
     <div>
       <h1>Result page</h1>
       <ul>
-        <li>{state.project.name}</li>
-        <li>{state.project.description}</li>
-        <li>{state.project.date}</li>
+        <li>Name of Project:{state.project.name}</li>
+        <li>Project Description:{state.project.description}</li>
+        <li>Starting Date:{state.project.date}</li>
+        <li>Status: {state.project.Status}</li>
+        <li>Priority level: {state.project.Priority}</li>
       </ul>
     </div>
   );
