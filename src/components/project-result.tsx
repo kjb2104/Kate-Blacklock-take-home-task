@@ -15,22 +15,29 @@ const ProjectResult = () => {
 
   return (
     <div>
-      <h1>Result page</h1>
+
+      {/* add tailwindcss styling to button and list elements */}
+      <div className="border-4">
+      <h1 className="pt-0 mx-8 text-4xl font-semibold text-blue-700">Your project details:</h1>
+      <br/>
       <ul>
-        <li>Name of Project: {state.project.Name}</li>
-        <li>Owner: {state.project.Owner}</li>
-        <li>Project Description: {state.project.Description}</li>
-        <li>Starting Date: {state.project.Date}</li>
-        <li>Status: {status}</li>
-        <li>Priority level: {state.project.Priority}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Name of Project: {state.project.Name}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Owner: {state.project.Owner}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Project Description: {state.project.Description}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Starting Date: {state.project.Date}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Status: {status}</li>
+        <li className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">Priority level: {state.project.Priority}</li>
       </ul>
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
-        Mark Project as Complete
+      <label className="text-2x1 font-semibold leading-7 text-blue-700 mx-8">
+            Mark Project as Complete
+        <input className="ml-4"type="checkbox" checked={checked} onChange={handleChange} />
       </label>
       <br />
-      <button onClick={() => navigate("/")}>Add another Project</button>
-    </div>
+      <div>
+      <button className=" mx-8 my-8 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => navigate("/")}>Add another Project</button>
+      </div>
+    </div></div>
+
   );
 };
 
