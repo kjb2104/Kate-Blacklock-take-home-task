@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const ProjectResult = () => {
   const { state } = useLocation();
-
+console.log(state)
 
   return (
     <div>

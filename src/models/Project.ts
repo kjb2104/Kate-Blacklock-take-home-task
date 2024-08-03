@@ -2,9 +2,9 @@ export interface IProject {
 
         name: string;
         description: string;
+        Owner:string;
         date: string;
         Status: string;
-        // owner:string;
         Priority: string;
         
       
