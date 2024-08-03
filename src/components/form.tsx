@@ -18,6 +18,8 @@ const ProjectForm = () => {
     setHasPosted(false);
   };
 
+  //use react hook form SubmitHandler to access the data when the form is submitted
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <br />
@@ -35,6 +37,7 @@ const ProjectForm = () => {
       {errors.Name?.type === "minLength" && (
         <p role="alert">Project Name must be over 3 characters</p>
       )}
+      {/* add error handling to the form validation to inform the user what the specific issue is  */}
       <br />
       <label>Your name:</label>
       <input
