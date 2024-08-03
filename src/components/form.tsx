@@ -8,15 +8,14 @@ const ProjectForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IProject>({mode: "onBlur"});
+  } = useForm<IProject>({ mode: "onBlur" });
 
-  const [hasPosted, setHasPosted] = useState(false)
+  const [hasPosted, setHasPosted] = useState(false);
 
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<IProject> = (data) => {
-
     navigate("/project-result", { state: { project: data } });
-    setHasPosted(false)
+    setHasPosted(false);
   };
 
   return (
@@ -25,62 +24,57 @@ const ProjectForm = () => {
       <label>Name of project:</label>
       <input
         placeholder="...."
-        {...register("name", { required: true, maxLength: 50, minLength: 3 })}
+        {...register("Name", { required: true, maxLength: 50, minLength: 3 })}
       />
-       {errors.name?.type === "required" && (
-        <p role = "alert">Project Name is required</p>
+      {errors.Name?.type === "required" && (
+        <p role="alert">Project Name is required</p>
       )}
-         {errors.name?.type === "maxLength" && (
+      {errors.Name?.type === "maxLength" && (
         <p role="alert">Project Name must be under 50 characters</p>
       )}
-           {errors.name?.type === "minLength" && (
-        <p role="alert">Description must be over 3 characters</p>
+      {errors.Name?.type === "minLength" && (
+        <p role="alert">Project Name must be over 3 characters</p>
       )}
       <br />
       <label>Your name:</label>
       <input
         placeholder="...."
-        {...register("Owner", { required: true, pattern: /[A-Za-z]/g })}
+        {...register("Owner", { required: true, pattern: /^[A-Za-z-]+$/gi })}
       />
-       {errors.Owner?.type === "required" && (
-        <p role = "alert">Your name is required</p>
+      {errors.Owner?.type === "required" && (
+        <p role="alert">Your name is required</p>
       )}
-        {errors.Owner?.type === "Pattern" && (
+      {errors.Owner?.type === "pattern" && (
         <p role="alert">Must only include letters</p>
       )}
-<br/>
+      <br />
       <label>Description of project:</label>
       <br />
 
       <input
-      placeholder="...."
-        {...register("description", {
+        placeholder="...."
+        {...register("Description", {
           required: true,
           maxLength: 200,
           minLength: 30,
         })}
       />
 
-      {errors.description?.type === "required" && (
+      {errors.Description?.type === "required" && (
         <p role="alert">Description is required</p>
       )}
-      {errors.description?.type === "maxLength" && (
+      {errors.Description?.type === "maxLength" && (
         <p role="alert">Description must be under 200 characters</p>
       )}
-      {errors.description?.type === "minLength" && (
+      {errors.Description?.type === "minLength" && (
         <p role="alert">Description must be over 30 characters</p>
       )}
-<br/>
+      <br />
       <label>Starting Date:</label>
       <br />
-      <input
-        type="date"
-        {...register("date", { required: true})}
-      />
-        
-       {errors.date?.type === "required" && (
-        <p role="alert">Date is required</p>
-      )}
+      <input type="Date" {...register("Date", { required: true })} />
+
+      {errors.Date?.type === "required" && <p role="alert">Date is required</p>}
 
       <br />
       <label>Status of project:</label>
@@ -105,7 +99,9 @@ const ProjectForm = () => {
         <p role="alert">Priority field is required</p>
       )}
       <br />
-      <button type="submit" disabled={hasPosted}>Submit</button>
+      <button type="submit" disabled={hasPosted}>
+        Submit
+      </button>
       <br />
     </form>
   );
