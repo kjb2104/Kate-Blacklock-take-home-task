@@ -7,11 +7,11 @@ export default function App() {
 
 
   return (
-    <main className="flex flex-col">
-      <header className="flex h-24 bg-purple-200">
-        <h1 className="pt-0 mx-56 text-5xl font-semibold text-blue-700">Project Management Platform</h1>
+    <main className="flex flex-col bg-emerald-200">
+      <header className="flex h-24 bg-emerald-300">
+        <h1 className=" h-16 m-auto text-4xl font-bold text-blue-800">Project Management Platform</h1>
       </header>
-
+{/* add background and header colours to correspond with overall blue/emerald theme */}
       <Routes>
         <Route path="/" element={<ProjectForm />} />
         <Route path="/project-result" element={<ProjectResult />} />

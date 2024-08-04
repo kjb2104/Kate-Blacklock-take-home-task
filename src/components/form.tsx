@@ -21,18 +21,21 @@ const ProjectForm = () => {
   //use react hook form SubmitHandler to access the data when the form is submitted
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="border-2 rounded-r border-y-sky-700 border-x-sky-300 bg-emerald-50 px-5 mb-5"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <br />
       <div className="mx-8">
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
+            <h2 className="text-base font-semibold leading-7 text-blue-900">
               Submit a new Project
             </h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">
+            <p className="mt-1 text-sm leading-6 text-blue-600">
               This information will be displayed to other users.
             </p>
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Name of project:
             </label>
             <div className="mt-2">
@@ -77,7 +80,7 @@ const ProjectForm = () => {
             </div>
             {/* add error handling to the form validation to inform the user what the specific issue is  */}
             <br />
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Your name:
             </label>
             <div className="mt-2">
@@ -112,7 +115,7 @@ const ProjectForm = () => {
             </div>
 
             <br />
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Description of project:
             </label>
             <br />
@@ -157,11 +160,11 @@ const ProjectForm = () => {
             </div>
 
             <br />
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Starting Date:
             </label>
             <br />
-            <div className="mt-2">
+            <div className="mt-2 bg-emerald-50">
               <input type="date" {...register("Date", { required: true })} />
 
               {errors.Date?.type === "required" && (
@@ -174,19 +177,26 @@ const ProjectForm = () => {
               )}
             </div>
             <br />
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Status of project:
             </label>
             <br />
             <div className="mt-2">
               <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <select
-                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                  defaultValue="Not started"
+                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-blue-600 placeholder:text-blue-600 focus:ring-0 sm:text-sm sm:leading-6"
                   {...register("Status", { required: true })}
                 >
-                  <option value="Complete">Complete</option>
-                  <option value="Working on it">Working on it</option>
-                  <option value="Not started">Not started</option>
+                  <option className="text-blue-600" value="Complete">
+                    Complete
+                  </option>
+                  <option className="text-blue-600" value="Working on it">
+                    Working on it
+                  </option>
+                  <option className="text-blue-600" value="Not started">
+                    Not started
+                  </option>
                 </select>
               </div>
             </div>
@@ -202,19 +212,26 @@ const ProjectForm = () => {
             </div>
 
             <br />
-            <label className="block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-blue-700">
               Priority level
             </label>
             <br />
             <div className="mt-2">
               <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <select
-                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                  defaultValue="Low"
+                  className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-blue-600 placeholder:text-blue-600 focus:ring-0 sm:text-sm sm:leading-6"
                   {...register("Priority", { required: true })}
                 >
-                  <option value="High">High</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Low">Low</option>
+                  <option className="text-blue-600" value="High">
+                    High
+                  </option>
+                  <option className="text-blue-600" value="Medium">
+                    Medium
+                  </option>
+                  <option className="text-blue-600" value="Low">
+                    Low
+                  </option>
                 </select>
               </div>
             </div>
