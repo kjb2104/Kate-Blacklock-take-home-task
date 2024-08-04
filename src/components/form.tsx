@@ -14,6 +14,7 @@ const ProjectForm = () => {
 
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<IProject> = (data) => {
+    setHasPosted(true)
     navigate("/project-result", { state: { project: data } });
     setHasPosted(false);
   };
