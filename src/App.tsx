@@ -1,17 +1,16 @@
-
 import ProjectForm from "./components/form.tsx";
 import ProjectResult from "./components/project-result.tsx";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-
-
   return (
-    <main className="flex flex-col bg-emerald-200">
+    <main className="flex flex-col h-dvh bg-emerald-200">
       <header className="flex h-24 bg-emerald-300">
-        <h1 className=" h-16 m-auto text-4xl font-bold text-blue-800">Project Management Platform</h1>
+        <h1 className=" h-16 m-auto text-4xl font-bold text-blue-800 text-wrap">
+          Project Platform
+        </h1>
       </header>
-{/* add background and header colours to correspond with overall blue/emerald theme */}
+      {/* add background and header colours to correspond with overall blue/emerald theme */}
       <Routes>
         <Route path="/" element={<ProjectForm />} />
         <Route path="/project-result" element={<ProjectResult />} />
