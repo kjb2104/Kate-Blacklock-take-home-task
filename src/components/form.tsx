@@ -21,12 +21,11 @@ const ProjectForm = () => {
   //use react hook form SubmitHandler to access the data when the form is submitted
 
   return (
-    <div className="flex">
+    <div className="m-auto">
       <form
-        className="m-auto border-2 rounded-r border-y-sky-700 border-x-sky-300 bg-emerald-50 px-5 mb-5"
+        className="h-fit w-max border-2 rounded-r border-y-sky-700 border-x-sky-300 bg-emerald-50 px-5 mb-5"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <br />
         <div className="mx-8">
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
@@ -42,7 +41,6 @@ const ProjectForm = () => {
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
-                    placeholder="..."
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     {...register("Name", {
                       required: true,
@@ -88,7 +86,6 @@ const ProjectForm = () => {
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="...."
                     {...register("Owner", {
                       required: true,
                       pattern: /^[A-Za-z- ]+$/gi,
@@ -119,12 +116,10 @@ const ProjectForm = () => {
               <label className="block text-sm font-medium leading-6 text-blue-700">
                 Description of project:
               </label>
-              <br />
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <textarea
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="...."
                     {...register("Description", {
                       required: true,
                       maxLength: 200,
@@ -164,9 +159,12 @@ const ProjectForm = () => {
               <label className="block text-sm font-medium leading-6 text-blue-700">
                 Starting Date:
               </label>
-              <br />
-              <div className="mt-2 bg-emerald-50">
-                <input type="date" {...register("Date", { required: true })} />
+              <div className="mt-2">
+                <input
+                  className="bg-transparent flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                  type="date"
+                  {...register("Date", { required: true })}
+                />
 
                 {errors.Date?.type === "required" && (
                   <p
@@ -181,7 +179,6 @@ const ProjectForm = () => {
               <label className="block text-sm font-medium leading-6 text-blue-700">
                 Status of project:
               </label>
-              <br />
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <select
@@ -216,7 +213,6 @@ const ProjectForm = () => {
               <label className="block text-sm font-medium leading-6 text-blue-700">
                 Priority level
               </label>
-              <br />
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <select

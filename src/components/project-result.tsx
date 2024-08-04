@@ -8,16 +8,16 @@ const ProjectResult = () => {
 
   // add navigation to return to the form to add another project
   const navigate = useNavigate();
-  // add status change for when the checkbox is marked as complete
+  // add status change for when the status is marked as complete
   const handleChange = () => {
     setStatus("Complete");
     state.project.Status = "Complete";
   };
 
   return (
-    <div className="flex">
+    <div className="m-auto">
       {/* add tailwindcss styling to button and list elements */}
-      <div className=" m-auto text-left items-left border-2 rounded-r border-y-sky-700 border-x-sky-700 px-5 mb-5 bg-emerald-50">
+      <div className=" text-left items-left border-2 rounded-r border-y-sky-700 border-x-sky-700 px-5 mb-5 bg-emerald-50">
         <h1 className="py-2 mt-6 mx-8 text-4xl font-semibold text-blue-700">
           Project details:
         </h1>
@@ -61,11 +61,12 @@ const ProjectResult = () => {
           </li>
         </ul>
 
+        {/* add a button to indicate completion in a similar style to the others */}
         <button
           className=" mx-8 text-left items-left my-8 rounded-md bg-emerald-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
           onClick={handleChange}
         >
-          Mark as Project as Complete ✓
+          Mark Project as Complete ✓
         </button>
 
         <button
